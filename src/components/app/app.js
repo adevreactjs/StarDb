@@ -20,19 +20,6 @@ export default class App extends Component {
       <Header />
       <RandomPlanet />
       <PeoplePage/>
-
-      <div className="row mb2">
-        <div className="col-md-6">
-          <ItemList onItemSelected={this.onPersonSelected}
-          getData ={this.swapiService.getAllPlanets} 
-          renderItem ={(item) => item.name} />
-        </div>
-        <div className="col-md-6">
-        </div>
-      </div>
-
-    
-    
     </div>
   );
 }

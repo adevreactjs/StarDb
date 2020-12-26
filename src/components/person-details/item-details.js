@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import SwapiService from '../../service/swapi-service'
 
-import './person-details.css';
+import './item-details.css';
 
-export default class PersonDetails extends Component {
+export default class ItemDetails extends Component {
 
   swapiService = new SwapiService()
 
@@ -21,13 +21,13 @@ export default class PersonDetails extends Component {
   }
 
   updatePerson = () => {
-    const {personId} = this.props
+    const {personId, getData} = this.props
 
     if(!personId) {
       return
     }
 
-    this.swapiService.getPerson(personId)
+    getData(personId)
                      .then((person) => {
                        this.setState({
                         person
